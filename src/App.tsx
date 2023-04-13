@@ -1,12 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { ThemeProvider } from 'styled-components'
+import { defaultTheme } from './styles/themes/default'
+import { Button } from './components/Button'
+import { GlobalStyle } from './styles/global'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export function App() {
   return (
-    <h1>Hello world</h1>
+    <ThemeProvider theme={defaultTheme}>
+      <h1>Hello world</h1>
+
+      <Button />
+
+      <GlobalStyle />
+    </ThemeProvider>
   )
 }
-
-export default App
